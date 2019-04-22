@@ -143,7 +143,7 @@ export default class PostList extends React.PureComponent {
 
         const postlistScrollHeight = this.postlistRef.current.scrollHeight;
 
-        if (this.props.postListIds.length !== prevProps.postListIds.length && this.props.postListIds[0] === prevProps.postListIds[0]) {
+        if (this.state.postListIds.length !== prevState.postListIds.length && this.state.postListIds[0] === prevState.postListIds[0]) {
             const scrollValue = snapshot.previousScrollTop + (postlistScrollHeight - snapshot.previousScrollHeight);
             this.listRef.current.scrollTo(scrollValue, scrollValue - snapshot.previousScrollTop);
         }
